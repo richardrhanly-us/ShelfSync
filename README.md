@@ -1,3 +1,11 @@
+[![ShelfSync CI](https://github.com/richardrhanly-us/ShelfSync/actions/workflows/ci.yml/badge.svg)](https://github.com/richardrhanly-us/ShelfSync/actions/workflows/ci.yml)
+![React Native](https://img.shields.io/badge/React%20Native-0.81-20232A?logo=react&logoColor=61DAFB)
+![Expo](https://img.shields.io/badge/Expo-SDK%2054-000020?logo=expo&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white)
+![GraphQL](https://img.shields.io/badge/GraphQL-API-E10098?logo=graphql&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Neon-4169E1?logo=postgresql&logoColor=white)
+![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748?logo=prisma&logoColor=white)
+
 # ShelfSync
 
 ShelfSync is a full-stack mobile inventory application designed for library staff. It allows staff members to open inventory assignments, scan item barcodes, record inventory results, work offline, and synchronize completed records with a PostgreSQL database.
