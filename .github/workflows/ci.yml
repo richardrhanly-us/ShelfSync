@@ -31,7 +31,7 @@ jobs:
           cache-dependency-path: package-lock.json
 
       - name: Install mobile dependencies
-        run: npm ci
+        run: npm install
 
       - name: Run mobile tests
         run: npm test
@@ -52,6 +52,7 @@ jobs:
 
     env:
       DATABASE_URL: postgresql://shelfsync:shelfsync@localhost:5432/shelfsync
+      DIRECT_URL: postgresql://shelfsync:shelfsync@localhost:5432/shelfsync
 
     steps:
       - name: Check out repository
