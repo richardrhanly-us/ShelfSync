@@ -1,7 +1,9 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+# Learn more:
+# https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
 
-# dependencies
+# Dependencies
 node_modules/
+server/node_modules/
 
 # Expo
 .expo/
@@ -21,7 +23,7 @@ expo-env.d.ts
 # Metro
 .metro-health-check*
 
-# debug
+# Debug logs
 npm-debug.*
 yarn-debug.*
 yarn-error.*
@@ -30,14 +32,25 @@ yarn-error.*
 .DS_Store
 *.pem
 
-# local env files
-.env*.local
+# Environment files
+.env
+.env.*
+!.env.example
 
-# typescript
+server/.env
+server/.env.*
+!server/.env.example
+
+# TypeScript
 *.tsbuildinfo
 
-app-example
+# Starter and generated native folders
+app-example/
+/ios/
+/android/
 
-# generated native folders
-/ios
-/android
+# Generated Prisma AI assistant files
+server/.agents/
+server/.claude/
+server/.windsurf/
+server/skills-lock.json

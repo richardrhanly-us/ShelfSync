@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model InventoryRecord {
+  id             String   @id
+  assignmentId   String
+  barcode        String
+  result         String
+  recordedAt     DateTime
+  synchronizedAt DateTime
+
+  @@index([assignmentId])
+  @@index([barcode])
+  @@index([recordedAt])
+}
+
+model Assignment {
+  id             String        @id
+  title          String
+  location       String
+  dueDate        DateTime
+  completedItems Int           @default(0)
+  totalItems     Int
+  status         String
+  items          LibraryItem[]
+
+  @@index([dueDate])
+  @@index([status])
+}
+
+model LibraryItem {
+  id               String     @id @default(cuid())
+  barcode          String     @unique
+  title            String
+  callNumber       String
+  expectedLocation String
+  currentStatus    String
+  assignmentId     String
+  assignment       Assignment @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
+
+  @@index([assignmentId])
+  @@index([title])
+}
